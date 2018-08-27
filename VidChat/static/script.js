@@ -14,8 +14,6 @@ const configuration = {
 
 let room;
 let pc;
-let closeBtn = document.querySelector('#closeConnection');
-closeBtn.disabled = true;
 
 function onSuccess() { }
 function onError(error) {
@@ -99,9 +97,10 @@ function startWebRTC(isOfferer) {
         }
 
         if (message.sdp) {
-            closeBtn.disabled = false;
-            closeBtn.innerHTML = 'Disconnect From User';
-            closeBtn.className = 'btn btn-danger btn-lg';
+            let closeBtn = document.querySelector('#closeConnection');
+            closeBtn.style.display = 'block';
+            let progressBlock = document.querySelector('.progress-block');
+            progressBlock.style.display = 'none';
             // This is called after receiving an offer or answer from another peer
             pc.setRemoteDescription(
                 new RTCSessionDescription(message.sdp),
@@ -127,8 +126,6 @@ function startWebRTC(isOfferer) {
     });
 
     document.querySelector("#closeConnection").addEventListener("click", function () {
-        console.log("connection closed bitches");
-        closeBtn.disabled = true;
         pc.close();
     });
 }
