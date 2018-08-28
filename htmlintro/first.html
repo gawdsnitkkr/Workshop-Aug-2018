@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>My first doument</title>
+        <style>
+            
+            .image{
+                width:500px;
+                height: 500px;
+                overflow: hidden;
+            }
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .video{
+                width:800px;
+                height: 500px;
+                overflow: hidden;
+            }
+            video{
+                width:100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div id="content">
+                <h1>Welcome all to my webpage</h1>
+                <p>This is an HTML page that I created in VSCode</p>
+            </div>
+            <div id="links">
+                <a href="http://www.google.com" id="google_link" class="link">Google</a>
+                <a href="http://www.youtube.com" id="youtube_link" class="link">Youtube</a>
+            </div>
+            <button>Basic button</button>
+            <div class="image">
+                <img src="./nat-1.jpg" alt="nature">
+            </div>
+            <div class="video">
+                <video src="./video.mp4" controls loop autoplay>hello</video>
+            </div>
+        </div>
+    </body>
+</html>
